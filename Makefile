@@ -1,7 +1,7 @@
 version := -std=c++11
 gdb_args := -q
 gdb_file := ./gdbscript.txt
-program := ./Huffman.cpp
+program := ./Dijkstra.cpp
 
 a.out: $(program)
 	g++ $(version) $<

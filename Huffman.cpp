@@ -11,6 +11,7 @@ struct MinHNode {
   struct MinHNode *left, *right;
 };
 
+// 用堆的方式存储Huffman树
 struct MinH {
   unsigned size;
   unsigned capacity;
@@ -159,6 +160,7 @@ void printHCodes(struct MinHNode *root, int arr[], int top) {
   }
 }
 
+
 // Wrapper function
 void HuffmanCodes(char item[], int freq[], int size) {
   struct MinHNode *root = buildHfTree(item, freq, size);
@@ -166,15 +168,18 @@ void HuffmanCodes(char item[], int freq[], int size) {
   int arr[MAX_TREE_HT], top = 0;
 
   printHCodes(root, arr, top);
+
+  // 
 }
 
 int main() {
-  char arr[] = {'A', 'B', 'C', 'D'};
-  int freq[] = {5, 1, 6, 3};
+    char arr[] = {'A', 'B', 'C', 'D'};
+    int freq[] = {5, 1, 6, 3};
+    
+    // 根据字符出现的频率构建Huffman树
+    int size = sizeof(arr) / sizeof(arr[0]);
 
-  int size = sizeof(arr) / sizeof(arr[0]);
-
-  cout << "Char | Huffman code ";
-  cout << "\n----------------------\n";
-  HuffmanCodes(arr, freq, size);
+    cout << "Char | Huffman code ";
+    cout << "\n----------------------\n";
+    HuffmanCodes(arr, freq, size);
 }
