@@ -1,7 +1,7 @@
 version := -std=c++11
 gdb_args := -q
 gdb_file := ./gdbscript.txt
-program := ./validstring.cpp
+program := ./Huffman.cpp
 
 a.out: $(program)
 	g++ $(version) $<
@@ -12,4 +12,4 @@ debug: $(program)
 	gdb $(gdb_args) $@ -x $(gdb_file)
 
 clean:
-	rm -rf a.out
+	rm -rf a.out debug
